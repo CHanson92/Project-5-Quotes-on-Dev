@@ -1,0 +1,807 @@
+/*!
+Theme Name: Quotes on Dev Starter Theme
+Theme URI: http://underscores.me/
+Author: RED Academy
+Author URI: http://www.redacademy.com
+Description: A WordPress starter theme for the Quotes on Dev project, forked from Underscores.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Quotes on Dev Theme is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Embedded Fonts
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Content
+	## Posts and pages
+# Media
+# Page Templates
+	## All Archives Page
+	## Submit a Quote Page
+--------------------------------------------------------------*/
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden],
+template {
+  display: none; }
+
+a {
+  background-color: transparent; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0; }
+
+pre {
+  overflow: auto; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/*--------------------------------------------------------------
+# Embedded Fonts
+--------------------------------------------------------------*/
+@font-face {
+  font-family: 'Exo Light';
+  src: url("/qod/wp-content/themes/quotesondev/fonts/Exo-Light.eot");
+  src: url("/qod/wp-content/themes/quotesondev/fonts/Exo-Light.eot?#iefix") format("embedded-opentype"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-Light.woff2") format("woff2"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-Light.woff") format("woff"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-Light.ttf") format("truetype"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-Light.svg#Exo-Light") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Exo Light-Italic';
+  src: url("/qod/wp-content/themes/quotesondev/fonts/Exo-LightItalic.eot");
+  src: url("/qod/wp-content/themes/quotesondev/fonts/Exo-LightItalic.eot?#iefix") format("embedded-opentype"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-LightItalic.woff2") format("woff2"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-LightItalic.woff") format("woff"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-LightItalic.ttf") format("truetype"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-LightItalic.svg#Exo-LightItalic") format("svg");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Exo Medium-Italic';
+  src: url("/qod/wp-content/themes/quotesondev/fonts/Exo-MediumItalic.eot");
+  src: url("/qod/wp-content/themes/quotesondev/fonts/Exo-MediumItalic.eot?#iefix") format("embedded-opentype"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-MediumItalic.woff2") format("woff2"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-MediumItalic.woff") format("woff"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-MediumItalic.ttf") format("truetype"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-MediumItalic.svg#Exo-MediumItalic") format("svg");
+  font-weight: 500;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'Exo Medium';
+  src: url("/qod/wp-content/themes/quotesondev/fonts/Exo-Medium.eot");
+  src: url("/qod/wp-content/themes/quotesondev/fonts/Exo-Medium.eot?#iefix") format("embedded-opentype"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-Medium.woff2") format("woff2"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-Medium.woff") format("woff"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-Medium.ttf") format("truetype"), url("/qod/wp-content/themes/quotesondev/fonts/Exo-Medium.svg#Exo-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1.5; }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  clear: both; }
+
+/* Copy */
+p {
+  margin-bottom: 1.5rem; }
+
+dfn, cite, em, i {
+  font-style: italic; }
+
+blockquote {
+  margin: 0 1.5rem; }
+
+address {
+  margin: 0 0 1.5rem; }
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: .9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6rem; }
+
+code, kbd, tt, var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: .9375rem; }
+
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help; }
+
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none; }
+
+big {
+  font-size: 125%; }
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1rem; }
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */ }
+
+blockquote,
+q {
+  quotes: '' ''; }
+  blockquote:before, blockquote:after,
+  q:before,
+  q:after {
+    content: ''; }
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5rem; }
+
+ul,
+ol {
+  margin: 0 0 1.5rem 3rem; }
+
+ul {
+  list-style: disc; }
+
+ol {
+  list-style: decimal; }
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5rem; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0 1.5rem 1.5rem; }
+
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+table {
+  margin: 0 0 1.5rem;
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+/* Buttons */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background-color: #222;
+  border: 2px solid #0c0;
+  border-radius: 3px;
+  color: #0c0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: .75rem 2.25rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  text-shadow: none;
+  max-width: 15rem;
+  max-height: 3rem;
+  outline: none; }
+  button:hover,
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover {
+    color: #009900; }
+  button:active, button:focus,
+  input[type="button"]:active,
+  input[type="button"]:focus,
+  input[type="reset"]:active,
+  input[type="reset"]:focus,
+  input[type="submit"]:active,
+  input[type="submit"]:focus {
+    border-color: #aaa #bbb #bbb;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+            box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
+
+/* Fields */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 3px; }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  textarea:focus {
+    color: white; }
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+  padding: 3px; }
+
+textarea {
+  padding-left: 3px;
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/* Links */
+a {
+  color: #00cc00; }
+  a:visited {
+    color: #00cc00; }
+  a:hover, a:focus, a:active {
+    color: #009900; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    outline: 0; }
+
+/* Menus */
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%; }
+  .main-navigation .menu-toggle {
+    display: none; }
+  .main-navigation ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding-left: 0; }
+    .main-navigation ul ul {
+      -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+              box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 1.5rem;
+      left: -999rem;
+      z-index: 99999; }
+      .main-navigation ul ul ul {
+        left: -999rem;
+        top: 0; }
+      .main-navigation ul ul li:hover > ul,
+      .main-navigation ul ul li.focus > ul {
+        left: 100%; }
+      .main-navigation ul ul a {
+        width: 200px; }
+    .main-navigation ul li:hover > ul,
+    .main-navigation ul li.focus > ul {
+      left: auto; }
+  .main-navigation li {
+    float: left;
+    position: relative; }
+  .main-navigation a {
+    display: block;
+    text-decoration: none; }
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block; }
+
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none; }
+  .main-navigation ul {
+    display: block; } }
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+  margin: 0 0 1.5rem;
+  overflow: hidden; }
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%; }
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%; }
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+  .screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: .875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */ }
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5rem; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5rem; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clearfix {
+  clear: both;
+  content: "";
+  display: table; }
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/* Posts and pages */
+.sticky {
+  display: block; }
+
+.hentry {
+  margin: 0 0 1.5rem; }
+
+.updated:not(.published) {
+  display: none; }
+
+.single .byline,
+.group-blog .byline {
+  display: inline; }
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5rem 0 0; }
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5rem; }
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%; }
+
+/*--------------------------------------------------------------
+# Page Templates
+--------------------------------------------------------------*/
+/* Formatting for all pages */
+body {
+  max-width: 1080px;
+  background: #222222;
+  margin: 0 auto;
+  padding: 2.5%;
+  word-spacing: 1.5px;
+  font-size: 16px;
+  color: #ffffff; }
+  body h1 {
+    font-family: "Exo Light"; }
+  body h2 {
+    font-family: "Exo Light"; }
+  body p {
+    font-family: "Exo Light"; }
+  body header .newbutton {
+    cursor: pointer; }
+  body .nav-previous {
+    display: none; }
+  body .left {
+    color: #0c0;
+    font-size: 125px;
+    line-height: 125px;
+    margin-top: 3rem; }
+  body .right {
+    color: #0c0;
+    font-size: 125px;
+    line-height: 125px;
+    margin-top: 3rem; }
+  body .site-content {
+    margin: 1rem; }
+    body .site-content p {
+      font-size: 2.5rem; }
+    body .site-content #new-quote-button {
+      background-color: #222;
+      border: 2px solid #0c0;
+      border-radius: 3px;
+      color: #0c0;
+      font-family: "Exo Light";
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      padding: .75rem 2.25rem;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      text-shadow: none;
+      max-width: 15rem;
+      max-height: 3rem;
+      outline: none; }
+      body .site-content #new-quote-button:hover {
+        color: #009900; }
+    body .site-content .entry-meta h2 {
+      font-size: 1.25rem; }
+  body footer {
+    justify-self: center;
+    -ms-flex-item-align: center;
+        align-self: center; }
+    body footer p a {
+      text-decoration: none; }
+    body footer .main-navigation {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -webkit-box-pack: space-evenly;
+          -ms-flex-pack: space-evenly;
+              justify-content: space-evenly; }
+      body footer .main-navigation li {
+        padding-right: 1rem; }
+
+/* Media screen for mobile */
+@media screen and (min-width: 320px) {
+  body #page {
+    grid-auto-columns: minmax(320px, 619.99px);
+    grid-auto-rows: minmax(320px, 619.99px); }
+    body #page header .logo {
+      max-width: 300px; }
+    body #page .left {
+      display: none; }
+    body #page .right {
+      display: none; }
+    body #page footer .main-navigation {
+      display: block;
+      margin-top: 2rem; } }
+
+/* Media screen for tablet */
+@media screen and (min-width: 620px) {
+  body #page {
+    grid-auto-rows: minmax(620px, 1020px);
+    grid-auto-columns: minmax(620px, 1020px); }
+    body #page header .logo {
+      max-width: 500px; }
+    body #page .left {
+      display: none; }
+    body #page .right {
+      display: none; }
+    body #page footer .main-navigation {
+      display: block;
+      margin-top: 2rem; } }
+
+/* Media screen for desktop */
+@media screen and (min-width: 1020px) {
+  body #page {
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto; }
+    body #page header {
+      grid-row: 1;
+      grid-column: 2; }
+      body #page header .logo {
+        width: 700px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+    body #page .left {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      grid-row: 2;
+      grid-column: 1;
+      justify-self: right; }
+    body #page .right {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      grid-row: 2;
+      grid-column: 3;
+      justify-self: left; }
+    body #page .site-content {
+      grid-row: 2;
+      grid-column: 2;
+      justify-self: center;
+      margin-left: 1rem;
+      margin-right: 1rem; }
+    body #page #new-quote-button {
+      grid-row: 3;
+      grid-column: 2; }
+    body #page footer {
+      grid-row: 3;
+      grid-column: 3; } }
+
+/* About Page */
+.page-id-205 #page .site-content p {
+  font-size: 16px; }
+
+/* All Archives Page */
+/* Submit a Quote Page */
+.page-id-224 header {
+  font-size: 2rem; }
+
+.page-id-224 form {
+  color: white; }
+  .page-id-224 form input, .page-id-224 form textarea {
+    background: #222222;
+    border: #0c0 solid 1px;
+    width: 25rem; }
+    .page-id-224 form input button, .page-id-224 form textarea button {
+      background-color: #222;
+      border: 2px solid #0c0;
+      border-radius: 3px;
+      color: #0c0;
+      font-family: "Exo Light";
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      padding: .75rem 2.25rem;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      text-shadow: none;
+      max-width: 15rem;
+      max-height: 3rem;
+      outline: none; }
+      .page-id-224 form input button:hover, .page-id-224 form textarea button:hover {
+        color: #009900; }
+  .page-id-224 form #quote {
+    width: 30rem;
+    height: 10rem; }
+  .page-id-224 form input#submit {
+    margin-top: 2rem; }
