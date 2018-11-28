@@ -147,3 +147,17 @@ function qod_update_quote_meta_fields( $value, $object, $field_name ) {
   
   return update_post_meta( $object->ID, $field_name, strip_tags( $value ) );
 }
+
+  /* remove_all_filters('posts_orderby');
+  query_posts('orderby=rand');
+  */
+
+function random_post( $query ) {
+  if ( is_home() ) {
+      $query->set( 'posts_per_page', 1 );
+      $query->set( 'orderby', 'rand' );
+  } if ( is_page( 237 ) ) {
+    $query->set( 'posts_per_page', 50 );
+  }
+}
+add_action( 'pre_get_posts', 'random_post' );

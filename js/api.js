@@ -8,6 +8,9 @@
             event.preventDefault();
 
             // fetch a new quote
+            //get the first and only post array
+            // update the quote content and name of the quoted person
+            // display quote source if available 
             $.ajax({
                 method:'GET',
                 url: api_vars.root_url + 
@@ -22,9 +25,6 @@
                 $( '.title' ).text( title );
                 $( '.entry-content' ).html( content );
                 $( '.source' ).html('<a href="' + quoteSourceUrl + '">' + quoteSource +'</a>');
-                //get the first and only post array
-                // update the quote content and name of the quoted person
-                // display quote source if available 
                 // update the URL using history
                 // Make the back and forward nav work with the history API
             })
