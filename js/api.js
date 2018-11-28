@@ -25,8 +25,15 @@
                 $( '.title' ).text( title );
                 $( '.entry-content' ).html( content );
                 $( '.source' ).html('<a href="' + quoteSourceUrl + '">' + quoteSource +'</a>');
-                // update the URL using history
-                // Make the back and forward nav work with the history API
+            // update the URL using history
+            let url = 'http://localhost:3000/qod/' + post.slug;
+            history.pushState(null, null, url)
+            console.log(post)
+            // Make the back and forward nav work with the history API
+            window.addEventListener('popstate', function(event) {
+            let LastPage = document.URL;
+            window.location.replace(LastPage);
+            })
             })
         })
     });

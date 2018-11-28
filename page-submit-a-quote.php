@@ -12,9 +12,9 @@ get_header(); ?>
 
             <section>
                 
-                <header>
+                <div>
                     <?php the_title(); ?>
-                </header>
+                </div>
 
                 <?php // If user is logged in & can edit posts ?>
                     <!-- display form html -->

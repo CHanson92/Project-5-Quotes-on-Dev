@@ -362,7 +362,7 @@ dd {
 img {
   height: auto;
   /* Make sure images are scaled correctly. */
-  width: 100%;
+  width: auto;
   /* Adhere to container width. */ }
 
 table {
@@ -699,8 +699,6 @@ body {
   body #page {
     grid-auto-columns: minmax(320px, 620px);
     grid-auto-rows: minmax(320px, 620px); }
-    body #page header .logo {
-      max-width: 300px; }
     body #page .left {
       display: none; }
     body #page .right {
@@ -714,8 +712,6 @@ body {
   body #page {
     grid-auto-rows: minmax(620px, 1020px);
     grid-auto-columns: minmax(620px, 1020px); }
-    body #page header .logo {
-      max-width: 500px; }
     body #page .left {
       display: none; }
     body #page .right {

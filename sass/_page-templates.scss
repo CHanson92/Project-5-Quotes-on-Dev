@@ -108,12 +108,6 @@ body {
             grid-auto-columns: minmax(320px, 620px);
             grid-auto-rows: minmax(320px, 620px);
     
-            header {
-                .logo {
-                    max-width: 300px;
-                }
-            }
-    
             .left {
                 display: none;
             }
@@ -139,12 +133,6 @@ body {
         #page {
             grid-auto-rows: minmax(620px, 1020px);
             grid-auto-columns: minmax(620px, 1020px);
-
-            header {
-                .logo {
-                    max-width: 500px;
-                }
-            }
 
             .left {
                 display: none;
